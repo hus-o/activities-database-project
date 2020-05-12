@@ -6,3 +6,8 @@ html(lang="en")
         title Document
     body
         p Hi
+        each activity in activities
+            ul
+            li= activity.name
+            li= activity.location
+            li= activity.activity_time_minutes
