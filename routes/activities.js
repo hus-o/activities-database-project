@@ -2,6 +2,12 @@ const express = require("express");
 const router = express.Router();
 const knex = require("../knex/knex.js");
 
+router.get("/", function (req, res, next) {
+  res.render("index", { title: "Hello" });
+});
+router.get("/add", function (req, res, next) {
+  res.render("newActivity");
+});
 // GET all activities
 router.get("/all", function (req, res, next) {
   knex("activities")
@@ -50,10 +56,13 @@ router.post("/activity", function (req, res, next) {
     .insert(req.body, "id")
     .then(function (activityID) {
       knex("activities").where("id", activityID).first();
+      console.log(activityID);
     })
     .then(function (activity) {
+      res.status(200).send({
+        message: "Added!",
+      });
       res.json(activity);
-      res.send("Activity Added");
     })
     .catch(function (error) {
       next(error);
