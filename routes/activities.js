@@ -16,13 +16,24 @@ router.get('/all', function(req, res, next) {
 // *** GET single activity *** //
 router.get('/activity/:id', function(req, res, next) {
   knex("activities").where('id', req.params.id).first()
-  .then(function(user) {
-    res.status(200).json(user);
+  .then(function(activity) {
+    res.status(200).json(activity);
   })
   .catch(function(error) {
     next(error);
   });
 });
+
+// *** GET all activity of a given type *** //
+router.get('/all/:type', function(req, res, next) {
+    knex("activities").select().where({type:req.params.type})
+    .then(function(activities) {
+      res.status(200).json(activities);
+    })
+    .catch(function(error) {
+      next(error);
+    });
+  });
 
 // *** add activity *** //
 router.post('/activity', function(req, res, next) {
