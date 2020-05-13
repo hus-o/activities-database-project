@@ -2,9 +2,13 @@ const express = require('express');
 const router = express.Router();
 const knex = require('../knex/knex.js');
 
-router.get("/", function(req,res){
-    res.render("index")
-})
+
+router.get("/", function (req, res, next) {
+  res.render("index", { title: "Hello" });
+});
+router.get("/add", function (req, res, next) {
+  res.render("newActivity");
+});
 
 // GET all activities
 router.get('/all', function(req, res, next) {
