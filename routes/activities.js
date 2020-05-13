@@ -16,6 +16,20 @@ router.get("/all", function (req, res, next) {
     });
 });
 
+// Get activity based on the type
+
+router.get("/all/:type", function (req, res, next) {
+  knex("activities")
+    .select()
+    .where({ type: req.params.type })
+    .then(function (activities) {
+      res.status(200).json(activities);
+    })
+    .catch(function (error) {
+      next(error);
+    });
+});
+
 // *** GET single activity *** //
 router.get("/activity/:id", function (req, res, next) {
   knex("activities")
