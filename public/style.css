@@ -1,3 +1,21 @@
 #activityTable{
-    border:1px solid black
+    width: 80%;
+    background-color: #FFFFFF;
+    border-collapse: collapse;
+    border-width: 2px;
+    border-color: #7ea8f8;
+    border-style: solid;
+    color: #000000;
 }
+
+#activityTable td, #activityTable th {
+  border-width: 2px;
+  border-color: #7ea8f8;
+  border-style: solid;
+  padding: 3px;
+}
+
+#activityTable thead {
+  background-color: #7ea8f8;
+}
+

@@ -11,7 +11,7 @@ router.get('/all', function(req, res, next) {
   knex("activities").select()
   .then(function(activities) {
     // res.status(200).json(activities);
-    console.log(activities)
+    //console.log(activities)
     res.render("viewActivity", {activities:activities})
   })
   .catch(function(error) {
