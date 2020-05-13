@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous')
+    body
+        p Please Fill the Form To Add Activities
+        div.container-fluid
+        form
+            .form-group.row
+            label.col-sm-2.col-form-label(for='name') Activity Name
+            .col-sm-10
+                input#name.form-control(type='text')
+            .form-group.row
+            label.col-sm-2.col-form-label(for='location') Location
+            .col-sm-10
+                input#location.form-control(type='text')
+            .form-group.row
+            label.col-sm-2.col-form-label(for='type') Type
+            .col-sm-10
+                input#type.form-control(type='text')
+            .form-group.row
+            label.col-sm-2.col-form-label(for='activityTime') Duration
+            .col-sm-10
+                input#activityTime.form-control(type='text')
+            .form-group.row
+            .col-sm-10
+                button.btn.btn-primary(type='submit') Submit
