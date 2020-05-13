@@ -30,10 +30,13 @@ router.post('/activity', function(req, res, next) {
   knex("activities").insert(req.body, "id")
   .then(function(activityID){
     knex("activities").where('id', activityID).first()
+    console.log(activityID)
   })
   .then(function(activity) {
-    res.json(activity);
-    res.send("Activity Added")
+    res.status(200).send({
+        message:"Added!"
+    })
+    res.json(activity)
   })
   .catch(function(error) {
     next(error);
