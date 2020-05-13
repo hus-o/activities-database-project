@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        script(src="../public/script.js")
+        link(rel='stylesheet', href='../public/style.css')
+        title View Activities
+    body
+        select(name='dropDown', id="dropDown" onchange="filter()")
+            each val in ['All','Sport','Food']
+                option=val
+        table(id="activityTable")
+            thead
+                th  Activity Name
+                th  Location
+                th  Type
+                th  Average Time Taken (minutes)
+            tbody
+                each activity in activities
+                    tr
+                        td #{activity.name}
+                        td #{activity.location}
+                        td #{activity.type}
+                        td #{activity.activity_time_minutes}

@@ -2,11 +2,17 @@ const express = require('express');
 const router = express.Router();
 const knex = require('../knex/knex.js');
 
+router.get("/", function(req,res){
+    res.render("index")
+})
+
 // GET all activities
 router.get('/all', function(req, res, next) {
   knex("activities").select()
   .then(function(activities) {
-    res.status(200).json(activities);
+    // res.status(200).json(activities);
+    console.log(activities)
+    res.render("viewActivity", {activities:activities})
   })
   .catch(function(error) {
     next(error);
