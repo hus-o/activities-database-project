@@ -10,20 +10,21 @@ html(lang="en")
         link(rel="stylesheet", href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css")
         title View Activities
     body
-        label(for="dropDown") Filter by type of activity:
-        select(name='dropDown', id="dropDown" onchange="filterText()")
-            each val in ['All','Sport','Food']
-                option=val
-        table(id="activityTable")
-            thead
-                th  Activity Name
-                th  Location
-                th  Type
-                th  Average Time Taken (minutes)
-            tbody
-                each activity in activities
-                    tr(class="content")
-                        td #{activity.name}
-                        td #{activity.location}
-                        td(class="contentType") #{activity.type}
-                        td #{activity.activity_time_minutes}
+        div(class="tablePage")
+            label(for="dropDown") Filter by type of activity:
+            select(name='dropDown', id="dropDown" onchange="filterText()")
+                each val in ['All','Sport','Food']
+                    option=val
+            table(id="activityTable")
+                thead
+                    th  Activity Name
+                    th  Location
+                    th  Type
+                    th  Average Time Taken (minutes)
+                tbody
+                    each activity in activities
+                        tr(class="content")
+                            td #{activity.name}
+                            td #{activity.location}
+                            td(class="contentType") #{activity.type}
+                            td #{activity.activity_time_minutes}
