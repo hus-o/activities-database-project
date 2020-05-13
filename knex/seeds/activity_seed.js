@@ -8,20 +8,30 @@ exports.seed = function(knex) {
         {
           id: 1,
           name: 'Ice Skating',
-          location: "Alexandra Palace",
+          location: " N22 7AY",
+          type: "Sport",
           activity_time_minutes: 60
         },
         {
           id: 2, 
           name: 'Badminton',
-          location: "Leisure Centre",
+          location: "Any Leisure Centre",
+          type: "Sport",
           activity_time_minutes: 60
         },
         {
           id: 3, 
-          name: 'Go To Science Museum',
-          location: "Science Museum",
+          name: 'Science Museum',
+          location: "SW7 2DD",
+          type: "Museum",
           activity_time_minutes: 150
+        },
+        {
+          id: 4, 
+          name: 'Flat Iron',
+          location: "WC2E 8QH",
+          type: "Food",
+          activity_time_minutes: 90
         }
       ]);
     });
